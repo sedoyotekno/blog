@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+    <body>
+
+        {{ partial "header.html" . }}
+
+        <div class="container mt-3 mb-5">
+            <div class="row">
+
+                <div class="col">
+                    <article>
+                        <div class="">
+                           <div class="card-body p-md-5 row justify-content-center">
+                                
+                               <div class="post-header mb-4">
+                                    
+
+                                    <h1 class="card-title mb-3 text-center fontQS fw-bold">{{ .Title }}</h1>
+
+                                </div>
+
+                                <div class="feature-img">
+                                    <img class='card-img-top mb-5 rounded' 
+                            src='{{ if eq .Params.Image "" }}/img/golang.webp{{else}}{{ .Params.Image}}{{end}}'
+                            alt='{{ .Title }}'>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="post-content">
+                                        {{ .Content }}
+                                    </div>
+                                    <div class="post-info my-5">
+                                            <img src="{{ .Site.Author.image }}" class="rounded-circle me-1" width="32" height="32" />
+                                            <a class="text-decoration-none" href="{{ .Site.Author.homepage }}">{{ .Site.Author.name }}</a> | <time>{{ .Date.Format "02-01-2006" }}</time>
+                                    </div> 
+                                    <div class="my-4">
+                                        {{ range .Params.tags }}
+                                        <span class="btn btn-primary">
+                                             #<a class="text-decoration-none text-white" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                                        </span> 
+                                        {{ end }}
+                                    </div>
+                                    <div class="post-footer">
+                                        {{ partial "disqus.html" . }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+            </div>
+        </div>
+
+        {{ partial "footer.html" . }}
+        {{ partial "js-init.html" . }}
+    </body>
+</html>

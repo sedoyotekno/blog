@@ -1,0 +1,29 @@
+title = "Reboza Sambirejo"
+baseurl = "/"
+
+# Agar front-matter pakai format YAML
+MetaDataFormat = "yaml"
+
+# untuk apply temanya
+themesDir = "themes"
+theme = "tridigrid"
+
+# Shortname disqus, silahkan sesuaikan
+DisqusShortname = "reboza-sambirejo"
+
+# Untuk Google Analytic, silahkan sesuikan
+googleAnalytics = "" 
+
+# Untuk deskripsi tag meta di homepage
+[params]
+description = "Tutorial blogger indonesia"
+
+# Biodata Author
+[author]
+    name = "Whoswho"
+    homepage = "https://twitter.com/mhmdrosyad"
+    bio = "Pengamat Langit"
+    image = "/img/about/avatar.svg"
+
+[permalinks]
+  posts = ':slug'
